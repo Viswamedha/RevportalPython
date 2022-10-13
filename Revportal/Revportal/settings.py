@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*'] # Change in future
 
 
 DJANGO_CORE_APPS = [
+    #'admin_volt.apps.AdminVoltConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -111,27 +112,15 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/4.1/topics/i18n/
-
 LANGUAGE_CODE = 'en-uk'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.1/howto/static-files/
-
-STATIC_URL = 'static/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 WSGI_APPLICATION = 'revportal.wsgi.application'
+ASGI_APPLICATION = 'revportal.asgi.application'
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -146,9 +135,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -156,7 +142,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 AUTH_USER_MODEL = 'revwand.RevportalUser'
 SITE_URL = 'http://77.102.37.242:8000'
 
-# User redirects for forms
+
 LOGIN_URL = '../'
 LOGIN_REDIRECT_URL = '/userprofile'
 LOGOUT_REDIRECT_URL = '/'
